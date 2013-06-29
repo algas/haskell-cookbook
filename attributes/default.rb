@@ -52,6 +52,10 @@ default['haskell']['cabal']['url'] = 'http://hackage.haskell.org/packages/archiv
 default['haskell']['cabal']['version'] = '1.16.0.2'
 default['haskell']['cabal']['archive_file'] = "cabal-install-#{haskell['cabal']['version']}.tar.gz"
 default['haskell']['cabal']['download'] = "#{haskell['cabal']['url']}/cabal-install/#{haskell['cabal']['version']}/#{haskell['cabal']['archive_file']}"
+<<<<<<< HEAD
 default['haskell']['cabal']['configure_options'] = "--prefix=#{haskell['cabal']['prefix_dir']} GHC=#{haskell['cabal']['ghc']} GHC_PKG=#{haskell['cabal']['ghc_pkg']}"
+=======
+default['haskell']['cabal']['configure_options'] = "PREFIX=#{haskell['cabal']['prefix_dir']} GHC=#{haskell['cabal']['ghc']} GHC_PKG=#{haskell['cabal']['ghc_pkg']}"
+>>>>>>> 56ecb8ba5498c71468ea199a6981ae4415881e61
 default['haskell']['cabal']['owner'] = haskell['owner']
 default['haskell']['cabal']['group'] = haskell['group']
