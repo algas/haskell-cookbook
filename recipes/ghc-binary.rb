@@ -26,7 +26,7 @@ if node['haskell']['ghc']['packages'].length == 0
     }
   )
 else
-  packages = node['node']['ghc']['packages']
+  packages = node['haskell']['ghc']['packages']
 end
 
 packages.each do |pkg|
