@@ -65,7 +65,7 @@ remote_file File.join(cache_dir, archive_file) do
 end
 
 bash "build-and-install-ghc" do
-  cwd node['haskell']['ghc']['prefix_dir']
+  cwd cache_dir
   user node['haskell']['ghc']['owner']
   group node['haskell']['ghc']['group']
   code <<-EOF
