@@ -38,6 +38,7 @@ configure_options = node['haskell']['cabal']['configure_options']
 version = node['haskell']['cabal']['version']
 archive_file = node['haskell']['cabal']['archive_file']
 cache_dir = node['haskell']['cabal']['cache_dir']
+scope = node['haskell']['cabal']['scope']
 
 directory cache_dir do
   owner node['haskell']['cabal']['owner']
@@ -50,7 +51,6 @@ remote_file "#{File.join(cache_dir, archive_file)}" do
   source node['haskell']['cabal']['download']
   owner node['haskell']['cabal']['owner']
   group node['haskell']['cabal']['group']
-  # checksum node['haskell']['cabal']['checksum']
   mode "0644"
   not_if { ::File.exists?("#{File.join(cache_dir, archive_file)}") }
 end
@@ -60,7 +60,7 @@ bash "build-and-install-cabal-install" do
   user node['haskell']['cabal']['owner']
   group node['haskell']['cabal']['group']
   code <<-EOF
-    (tar -xvf #{archive_file} && cd cabal-install-#{version} && #{configure_options} bash bootstrap.sh --user)
+    (tar -xvf #{archive_file} && cd cabal-install-#{version} && #{configure_options} bash bootstrap.sh #{scope})
   EOF
   not_if { ::File.exists?(node['haskell']['cabal']['binary']) }
 end
