@@ -47,7 +47,7 @@ default['haskell']['cabal']['binary'] = "#{haskell['cabal']['prefix_dir']}/bin/c
 default['haskell']['cabal']['ghc_dir'] = haskell['ghc']['prefix_dir']
 default['haskell']['cabal']['ghc'] = "#{haskell['cabal']['ghc_dir']}/bin/ghc"
 default['haskell']['cabal']['ghc_pkg'] = "#{haskell['cabal']['ghc_dir']}/bin/ghc-pkg"
-default['haskell']['cabal']['extra_opts'] = "#{haskell['cabal']['ghc_dir']}/lib/ghc-#{haskell['ghc']['version']}/package.conf.d"
+default['haskell']['cabal']['extra_opts'] = "--package-db=#{haskell['cabal']['ghc_dir']}/lib/ghc-#{haskell['ghc']['version']}/package.conf.d"
 
 default['haskell']['cabal']['url'] = 'http://hackage.haskell.org/packages/archive'
 default['haskell']['cabal']['version'] = '1.16.0.2'
