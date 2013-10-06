@@ -48,10 +48,10 @@ default['haskell']['cabal']['ghc_dir'] = haskell['ghc']['prefix_dir']
 default['haskell']['cabal']['ghc'] = "#{haskell['cabal']['ghc_dir']}/bin/ghc"
 default['haskell']['cabal']['ghc_pkg'] = "#{haskell['cabal']['ghc_dir']}/bin/ghc-pkg"
 default['haskell']['cabal']['extra_opts'] = "--package-db=#{haskell['cabal']['ghc_dir']}/lib/ghc-#{haskell['ghc']['version']}/package.conf.d"
-default['haskell']['cabal']['url'] = 'http://hackage.haskell.org/packages/archive'
+default['haskell']['cabal']['url'] = 'http://hackage.haskell.org/package'
 default['haskell']['cabal']['version'] = '1.18.0.2'
 default['haskell']['cabal']['archive_file'] = "cabal-install-#{haskell['cabal']['version']}.tar.gz"
-default['haskell']['cabal']['download'] = "#{haskell['cabal']['url']}/cabal-install/#{haskell['cabal']['version']}/#{haskell['cabal']['archive_file']}"
+default['haskell']['cabal']['download'] = "#{haskell['cabal']['url']}/cabal-install-#{haskell['cabal']['version']}/#{haskell['cabal']['archive_file']}"
 default['haskell']['cabal']['configure_options'] = "PREFIX=#{haskell['cabal']['prefix_dir']} GHC=#{haskell['cabal']['ghc']} GHC_PKG=#{haskell['cabal']['ghc_pkg']} EXTRA_CONFIGURE_OPTS=#{haskell['cabal']['extra_opts']}"
 default['haskell']['cabal']['scope'] = '--user'
 default['haskell']['cabal']['extract_command'] = 'tar'
