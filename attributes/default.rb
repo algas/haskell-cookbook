@@ -56,6 +56,6 @@ default['haskell']['cabal']['configure_options'] = "PREFIX=#{haskell['cabal']['p
 default['haskell']['cabal']['scope'] = '--user'
 default['haskell']['cabal']['extract_command'] = 'tar'
 default['haskell']['cabal']['extract_options'] = '-xvf'
-default['haskell']['cabal']['cabal_dir'] = 'cabal-install-#{haskell['cabal']['version']}'
+default['haskell']['cabal']['cabal_dir'] = "cabal-install-#{haskell['cabal']['version']}"
 default['haskell']['cabal']['owner'] = haskell['owner']
 default['haskell']['cabal']['group'] = haskell['group']
