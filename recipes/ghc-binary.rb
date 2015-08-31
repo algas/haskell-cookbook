@@ -22,6 +22,7 @@ if node['haskell']['ghc']['packages'].length == 0
   packages = value_for_platform(
     "ubuntu" => {
       "13.04" => ["build-essential","libgmp-dev","libgmp3-dev"],
+      "14.04" => ["build-essential","libgmp-dev","libgmp3-dev"],
       "default" => ["build-essential","libgmp-dev","libgmp3-dev","libgmp3c2"],
     }
   )
